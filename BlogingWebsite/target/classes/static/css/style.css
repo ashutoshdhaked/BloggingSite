@@ -1,0 +1,133 @@
+@charset "ISO-8859-1";
+.bg-custom{
+	background-color: #333;
+	color: #fff;
+}
+.banner{
+	width: 100%;
+	height: 83vh;
+	color: white;
+	background: linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)),url(../images/blogimage.jpeg);
+    background-size: cover;
+}
+/* Style the main content */
+.main {
+  padding: 20px;
+}
+
+/* Style the footer */
+.info_section {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 0;
+}
+
+.info_contact a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.info_contact a:hover {
+  color: #f0f0f0;
+}
+
+.social_box a {
+  color: #fff;
+  margin-right: 20px;
+  font-size: 18px;
+}
+
+.social_box a:hover {
+  color: #f0f0f0;
+}
+
+.info_detail h5 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.info_detail p {
+  font-size: 16px;
+}
+.navbar-brand{
+	color: #fff;
+}
+
+/* Style the newsletter form */
+.info_form input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #fff;
+  margin-bottom: 10px;
+}
+
+.info_form button {
+  background-color: #555;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.info_form button:hover {
+  background-color: #444;
+}
+
+/* Style the useful links in the footer */
+.info_menu li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+.info_menu a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.info_menu a:hover {
+  color: #f0f0f0;
+}
+
+
+/*style for contact page */
+.contact-info {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(240,255,255);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-details {
+    flex: 1;
+    padding: 1rem;
+}
+
+.company-image {
+    flex: 1;
+    padding: 1rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+address p {
+    margin-bottom: 0.5rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+

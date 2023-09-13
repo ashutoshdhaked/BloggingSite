@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org" th:replace="normalbase::Layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>userblogs </title>
+</head>
+<body>
+	<section>		
+		<main class="content">
+            <!-- card data start -->
+             <div th:if="${message}=='empty'" class="alert alert-danger">you have not created any blog </div>
+            <div class="card" th:each="blog : ${list}">
+                <div class="card-data">
+                <img th:src="@{'/images/' +${blog.imageorvideo}}" alt="Image">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h2 th:text="${blog.blogger.name}" ></h2>
+                        <span class="time" th:text="${blog.time}"></span>
+                    </div>
+                    <p th:text="${blog.title}"></p>
+                    <div class="card-footer">
+                        <span class="likes" th:text="${blog.likes}"></span>
+                       <a th:href="@{/user/readblog(bid=${blog.blid})}" class="text-white read">Read More</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+            
+            
+           
+            <!-- Add more cards here -->
+        </main>
+	</section>
+</body>
+</html>

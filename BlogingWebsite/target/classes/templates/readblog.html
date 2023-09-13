@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org" th:replace="normalbase::Layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>showblogs</title>
+</head>
+<body>
+	<section>
+		<div class="contact-info">
+        <div class="contact-details">
+            <h2 th:text="${blog.title}"></h2>
+            <h5 th:text="${blog.blogger.name}"></h5>
+             <h6 th:text="${blog.time}"></h6>
+            <address>
+                <div th:utext="${blog.text}"></div>
+            </address>
+        </div>
+        <div class="company-image">
+            <img th:src="@{'/images/' + ${blog.imageorvideo}}" alt="Image related to blog"> 
+        </div>
+        
+    </div>
+    
+	</section>
+
+</body>
+</html>

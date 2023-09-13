@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org"  th:fragment="Layout(content)">
+ <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <title>bolggers.com</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+  </head>
+<body>
+	<!--Header section which is common for all the web pages*********************** -->
+	
+    <header class="header_section">   
+      <div class="header_bottom">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-custom ">
+  <a class="navbar-brand" href="#">Bloggers</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item ">
+        <a class="nav-link" th:href="@{/index}">Home </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/about}"> About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/contact}">Contact Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/loginsineup}">
+          <i class="fa fa-user" aria-hidden="true"></i>
+          <span>
+            Login/sineUp
+          </span>
+        </a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+      </div>
+    </header>
+    
+    <!-- End Of the Header Section *******************-->
+    
+  <!-- Here is the Main content which is loaded when other page is required ************-->  
+  <div th:replace="${content}"></div>
+  
+  <!--Here the Main page content is finished *************-->
+    
+  <!--this the footer Section **********************-->  
+    
+     <section class="info_section ">
+    <div class="container">
+      <div class="info_top">
+        <div class="row">
+          <div class="col-md-3 ">
+            <a class="navbar-brand" th:href=@{/index.html}>
+              Bloggers
+            </a>
+          </div>
+          <div class="col-md-5 ">
+            <div class="info_contact">
+              <a href="">
+                <i class="bi bi-geo-alt" aria-hidden="true"></i>
+                <span>
+                  Location :
+                </span>
+                  &nbsp;&nbsp;Jaipur,Rajasthan,India
+              </a>
+              <br>
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  +91 7340020440
+                </span>
+            </div>
+          </div>
+          <br>
+        </div>
+      </div>
+      <div class="info_bottom">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="info_detail">
+              <h5>
+                Company
+              </h5>
+              <p>
+                we believe in the power of words to inspire, inform, and connect 
+                people from all corners of the globe. We are passionate about providing a 
+                platform where individuals, businesses, and organizations can share their unique stories,
+                 expertise, and perspectives with the world.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="info_form">
+              <h5>
+                NEWSLETTER
+              </h5>
+              <form action="">
+                <input type="text" placeholder="Enter Your Email" />
+                <button type="submit">
+                  Subscribe
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="info_detail">
+              <h5>
+                Services
+              </h5>
+              <p>
+               On our website we are having many categoies of blog which is written by experts .
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6">
+            <div>
+              <h5>
+                Useful links
+              </h5>
+              <ul class="info_menu">
+                <li>
+                  <a th:href="@{/index}">
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a th:href="@{/about}">
+                    About
+                  </a>
+                </li>
+                <li class="mb-0">
+                  <a th:href="@{/contact}">
+                    Contact Us
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ <!--this the end of footer section ********************--> 
+ 
+ 
+ <!--java script code which can we need here*************** -->  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <script th:src="@{js/script.js}"></script> 
+</body>
+</html>

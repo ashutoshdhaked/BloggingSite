@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org" th:replace="normalbase::Layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>createblogs</title>
+</head>
+<body>
+	<section>	
+		<div class="body">
+				 <form class="form" th:action="@{/user/savedata(bid=${bloggerId})}"  method="post" enctype="multipart/form-data">
+        <div class="header">
+            <h1>Create a Blog</h1>
+            <div th:if="${message}=='m'"  class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong >Error</strong>&nbsp;Sorry you data is not Processed internal server error !!!
+               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+         </button>
+      </div>
+        </div>
+        <div class="inputs">
+            <label for="title">Title</label>
+            <input class="inputfield" type="text" id="title"  name="title" required>
+
+            <label for="category">Category</label>
+            <select  class="inputfield"  id="category" name="category" required>
+                <option value="technology">Technology</option>
+                <option value="travel">Travel</option>
+                <option value="food">Food</option>
+                <option value="lifestyle">Lifestyle</option>
+            </select>
+
+            <label for="media">Upload Media (Image/Video):</label>
+            <input  class="inputfield"  type="file" id="media" name="file" accept="image/*,video/*" required>
+        </div>
+
+        <textarea class="areatext" id="textArea" name="text" readonly></textarea>
+        
+        <div><button type="submit" class="btn btn-success">Create Blog</button></div>
+    </form>
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script> 
+    <script>tinymce.init({selector:'textarea'});</script>
+	     </div>
+	</section>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org" th:replace="normalbase::Layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>showblogs</title>
+</head>
+<body>
+	<section class="containers">		
+		<!--<div class="container">-->
+        <aside class="sidebar">
+            <h2>Categories</h2>
+            <ul>
+                <li class="listitem"><a href="#" class="category-filter" data-category="all">All</a></li>
+                <li class="listitem"><a href="#" class="category-filter" data-category="all">Technology</a></li>
+                <li class="listitem"><a href="#" class="category-filter" data-category="all">Travel</a></li>
+                <li class="listitem"><a href="#" class="category-filter" data-category="all">Food</a></li>
+                <li class="listitem"><a href="#" class="category-filter" data-category="all">Lifestyle</a></li>
+            </ul>
+        </aside>
+        <main class="content">
+			
+			<!-- card data start -->
+            <div class="card" th:each="blog : ${list}">
+                <div class="card-data">
+                <img th:src="@{'/images/'+ ${blog.imageorvideo}}" alt="Image">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h2 th:text="${blog.blogger.name}" ></h2>
+                        <span class="time" th:text="${blog.time}"></span>
+                    </div>
+                    <p th:text="${blog.title}"></p>
+                    <div class="card-footer">
+                        <span class="likes" th:text="${blog.likes}"></span>
+                       <a th:href="@{/user/readblog(bid=${blog.blid})}" class="text-white read">Read More</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+            
+            
+               <nav  th:if="${msg}=='yes'" aria-label="...">
+                  <ul class="pagination">
+                       <li th:if="${currentPage != 0}" class="page-item disabled">
+                      <a class="page-link" th:href="@{'/user/showblogs/'+${currentPage-1}}" >Previous</a>
+                       </li>
+                       <li th:classappend="${currentPage== -1 ? 'active' : ' '}"   th:each="i: ${#numbers.sequence(1,totalpage)}"  class="page-item"><a th:href="@{'/user/showblogs/'+${i-1}}"   class="page-link" href="#"><span th:text="${i}"></span></a></li>
+                       <li th:if="${currentPage+1 != totalpage }" class="page-item">
+                       <a class="page-link" th:href="@{'/user/showblogs/'+${currentPage+1}}" href="#">Next</a>
+                       </li>
+                 </ul>
+                </nav>
+    
+   
+            
+           
+            
+            <!-- Add more cards here -->
+            
+            
+        </main>
+  
+  
+   
+	</section>
+</body>
+</html>
